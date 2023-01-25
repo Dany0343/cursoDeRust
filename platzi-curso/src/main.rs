@@ -1,8 +1,6 @@
 fn main() {
-    let nombre: &str = "Oscar Bucio";
-    let mut edad: u8 = 21;
+    let temperatura_max: u8 = 33;
+    let temperatura_min: i8 = -10;
 
-    edad = edad + 1;
-    
-    println!("Hola soy {} y tengo {} años", nombre, edad);
+    println!("En CDMX la temperatura máxima fue de {} grados Celsius y la minima fue de {} grados Celsius", temperatura_max, temperatura_min);
 }
