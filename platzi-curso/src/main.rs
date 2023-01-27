@@ -1,6 +1,18 @@
 fn main() {
-    let temperatura_max: u8 = 33;
-    let temperatura_min: i8 = -10;
+    println!("Por favor, introduce tu nombre: ");
 
-    println!("En CDMX la temperatura máxima fue de {} grados Celsius y la minima fue de {} grados Celsius", temperatura_max, temperatura_min);
+    let mut nombre: String = String::new();
+
+    // Capturar datos del usuario
+    std::io::stdin().read_line(&mut nombre).unwrap();
+    nombre = nombre.trim().to_string();
+
+    // Un ejemplo un poco más complicado
+    // Obtener la edad de la consola
+    let mut pais: String = String::new();
+    println!("Por favor, introduce el país de donde vienes: ");
+    std::io::stdin().read_line(&mut pais).unwrap();
+    pais = pais.trim().to_string();
+
+    println!("Hola, bienvenidx {} del país {}", nombre, pais);
 }
