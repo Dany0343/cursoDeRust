@@ -1,18 +1,27 @@
 fn main() {
-    println!("Por favor, introduce tu nombre: ");
+    // Dos numeros que se van a sumar
+    let num_1 = 120; // Como es obvio que la variable tiene un valor numerico, no es necesario ponerle el tipo, Rust automaticamente lo asigna.
+    let num_2 = 321;
 
-    let mut nombre: String = String::new();
+    let suma = num_1 + num_2;
 
-    // Capturar datos del usuario
-    std::io::stdin().read_line(&mut nombre).unwrap();
-    nombre = nombre.trim().to_string();
+    loop {
+        // Mostrar los dos números en pantalla
+        println!("Por favor escribir la suma de {} y {}:", num_1, num_2);
 
-    // Un ejemplo un poco más complicado
-    // Obtener la edad de la consola
-    let mut pais: String = String::new();
-    println!("Por favor, introduce el país de donde vienes: ");
-    std::io::stdin().read_line(&mut pais).unwrap();
-    pais = pais.trim().to_string();
+        // Obtener del usuario el número que representa la suma
+        let mut suma_usuario = String::new();
+        std::io::stdin().read_line(&mut suma_usuario).unwrap();
 
-    println!("Hola, bienvenidx {} del país {}", nombre, pais);
+        let suma_usuario_int: i16 = suma_usuario.trim().parse().unwrap();
+
+        if suma_usuario_int == suma {
+            println!("Lo has hecho muy bien, el resultado es correcto");
+            break;
+        }
+        else {
+            println!("El resultado {} no es correcto, por favor intentalo de nuevo", suma_usuario_int);
+        }
+
+    }
 }
