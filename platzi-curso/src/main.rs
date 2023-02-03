@@ -1,19 +1,10 @@
-fn sumar_uno(numero_a_sumar: i16) -> i16 {  // Como en Python así se especifica el tipo que se va a devolver
+use csv::{ReaderBuilder, StringRecord}; // Esto permite leer un String que tenga forma de CSV
+use std::{fs}; // Para poder traernos el archivo al código
 
-    let numero_final = numero_a_sumar + 1;
-
-    println!("{}", numero_final);
-
-    return numero_final;
-}
-
-
-
+const FILENAME: &str = "history.csv";
 fn main() {
-    println!("Holaaa");
 
-    let diez_mas_uno: i16 = sumar_uno(10);
-    sumar_uno(diez_mas_uno);
-    sumar_uno(12);
+    let content = fs::read_to_string(FILENAME).unwrap();
+    println!("{}", content);
 
 }
