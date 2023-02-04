@@ -5,13 +5,13 @@ const FILENAME: &str = "history.csv";
 fn main() {
 
     let content = fs::read_to_string(FILENAME).unwrap();
-    println!("{}", content);
+
     // leer datos tabulares como lo es en un CSV
     let mut rdr = ReaderBuilder::new().delimiter(b';').from_reader(content.as_bytes());
     // la 'b' significa que se pasarán los datos como bytes y no como strings
 
     for result in rdr.records() {
-        println!("{:?}", result);
+        println!("Texto: {}", result.unwrap().get(2).unwrap().trim());
     }
 
 }
